@@ -33,7 +33,7 @@ const Blog = () => {
                   <p><strong>{item.tag}</strong></p>
                   <p>{item.description}</p>
                   <p><small>{new Date(item.createdDate).toLocaleDateString()}</small></p>
-                  <a className="btn btn-primary me-2" href={item.signupUrl} role="button" target="_blank" rel="noopener noreferrer">SignUp</a>
+                  <a className="btn btn-primary me-2" href={item.signupUrl} role="button" target="_blank" rel="noopener noreferrer">Read More </a>
                 </div>
               </div>
             </div>
