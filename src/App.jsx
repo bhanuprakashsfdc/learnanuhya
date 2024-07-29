@@ -16,11 +16,13 @@ function App() {
 
   return (
     <div className="App">
-    {loading ? <Preloader /> : (
-    <Router>
-      <AppRoutes />
-    </Router>
-    )}
+      <main className="main" id="top">
+        {loading ? <Preloader /> : (
+          <Router>
+            <AppRoutes />
+          </Router>
+          )}
+      </main>
     </div>
   )
 }
