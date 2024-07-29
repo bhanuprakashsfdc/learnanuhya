@@ -24,12 +24,12 @@ export const blogData = [
         signupUrl: "https://learn.anuhyadigital.com/introduction-to-cloud-computing-101/"
       },
       {
-        title: "CRM Analytics Free Trial",
+        title: "What is CRM",
         tag: "Salesforce",
-        description: "Infuse predictive and prescriptive insights directly into the workflow with Salesforce CRM Analytics.",
-        createdDate: "2024-06-25",
-        imageUrl: "path/to/image2.jpg",
-        signupUrl: "https://www.salesforce.com/form/signup/freetrial-crm-analytics/"
+        description: "What is CRM Unlock the essence of CRM (Customer Relationship Management) in this concise exploration, unveiling its significance, functions, and benefits.",
+        createdDate: "2024-04-04",
+        imageUrl: "what-is-crm.jpg",
+        signupUrl: "https://learn.anuhyadigital.com/what-is-crm/"
       }
   ];
   
