@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; 
 import { WEBSITE_NAME, WEBSITE_URL } from '../constants/constants';
 import { blogData } from '../data/blogData';
 
@@ -33,7 +34,8 @@ const Blog = () => {
                   <p><strong>{item.tag}</strong></p>
                   <p>{item.description}</p>
                   <p><small>{new Date(item.createdDate).toLocaleDateString()}</small></p>
-                  <a className="btn btn-primary me-2" href={item.signupUrl} role="button" target="_blank" rel="noopener noreferrer">Read More </a>
+                 {/*  <a className="btn btn-primary me-2" href={item.signupUrl} role="button" target="_blank" rel="noopener noreferrer">Read More </a> */}
+                  <Link className="btn btn-primary me-2" to={`/blog/${item.slug}.html`}>View Details</Link>
                 </div>
               </div>
             </div>

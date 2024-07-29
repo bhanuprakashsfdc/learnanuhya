@@ -2,7 +2,9 @@ export const blogData = [
     {
         id: 1,
         title: "Introduction to cloud computing 101",
+        slug: "introduction-to-cloud-computing-101",
         tag: "Salesforce",
+        keywords: "Introduction to cloud computing 101",
         description: "Introduction to cloud computing is Agile, scalable, secure. Offers diverse types (public, private, hybrid). Empowers with flexible infrastructure, cost efficiency, and robust security. Enables seamless scalability, fostering innovation and global accessibility.",
         createdDate: "2024-04-01",
         imageUrl: "/assets/img/blogs/introduction-to-cloud-computing-101/introduction-to-cloud-computing-101.jpg",
@@ -11,6 +13,7 @@ export const blogData = [
       {
         id: 2,
         title: "What is CRM",
+        slug: "what-is-crm",
         tag: "Salesforce",
         description: "What is CRM Unlock the essence of CRM (Customer Relationship Management) in this concise exploration, unveiling its significance, functions, and benefits.",
         createdDate: "2024-04-04",
