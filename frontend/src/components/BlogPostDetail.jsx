@@ -7,7 +7,6 @@ import SocialShare from './SocialShare';
 import TableOfContents from './TableOfContents';
 import RecentPosts from './RecentPosts';
 import { generateTocItems } from '../utils/tocUtils';
-import { getAdjacentPosts } from '../utils/navigationUtils';
 
 const BlogPostDetail = () => {
   const { slug } = useParams();
@@ -19,21 +18,18 @@ const BlogPostDetail = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/blogs/${slug}`);
+        // Fetch blog post
+        const response = await axios.get(`${API_BASE_URL}/api/blog/${slug}`);
         setPost(response.data);
-
-        // Prepend API_BASE_URL to the imageUrl
-        setPost(prevPost => ({
-          ...prevPost,
-          imageUrl: `${API_BASE_URL}${response.data.imageUrl}`
-        }));
-
         setViews((await axios.get(`${API_BASE_URL}/api/views/${slug}`)).data.views);
-        setAdjacentPosts(getAdjacentPosts(slug)); // Assuming this function can fetch adjacent posts dynamically
         setTocItems(generateTocItems(response.data.content));
-        
+
+        // Fetch adjacent posts
+        const adjacentResponse = await axios.get(`${API_BASE_URL}/api/blog/${slug}/adjacent`);
+        setAdjacentPosts(adjacentResponse.data);
+
         // Update view count
-        await axios.post(`${API_BASE_URL}/api/blogs/${slug}/view`);
+        await axios.post(`${API_BASE_URL}/api/views/${slug}`);
       } catch (error) {
         console.error('Error fetching post:', error);
       }
@@ -66,7 +62,7 @@ const BlogPostDetail = () => {
             <h1 className="blog-post-title">{title}</h1>
             <p className="blog-post-date">{new Date(createdDate).toLocaleDateString()}</p>
             <p className="blog-post-views">{views} views</p>
-            {imageUrl && <img src={imageUrl} alt={title} className="img-fluid blog-post-image" />}
+            {imageUrl && <img src={`${API_BASE_URL}${imageUrl}`} alt={title} className="img-fluid blog-post-image" />}
             <TableOfContents items={tocItems} />
             <p className="blog-post-description">{description}</p>
             <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: content }} />
