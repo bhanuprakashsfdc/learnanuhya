@@ -59,7 +59,7 @@ const BlogPostDetail = () => {
             <h1 className="blog-post-title">{title}</h1>
             <p className="blog-post-date">{new Date(createdDate).toLocaleDateString()}</p>
             <p className="blog-post-views">{views} views</p>
-            <img src={imageUrl} alt={title} className="img-fluid blog-post-image" />
+            {imageUrl && <img src={imageUrl} alt={title} className="img-fluid blog-post-image" />}
             <TableOfContents items={tocItems} />
             <p className="blog-post-description">{description}</p>
             <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: content }} />
