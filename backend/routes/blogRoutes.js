@@ -4,8 +4,7 @@ const blogController = require('../controllers/blogController');
 
 // Get all blogs
 router.get('/', blogController.getAllBlogs);
-
-// Get blog by slug
+router.get('/recent', blogController.getRecentPosts);
 router.get('/:slug', blogController.getBlogBySlug);
 
 module.exports = router;

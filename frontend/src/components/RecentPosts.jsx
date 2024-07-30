@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { blogData } from '../data/blogData';
+import { API_BASE_URL } from '../constants/constants';
 
 const RecentPosts = () => {
-  // Sort blog posts by date in descending order and get the 5 most recent
-  const recentPosts = [...blogData].sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate)).slice(0, 5);
+  const [recentPosts, setRecentPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchRecentPosts = async () => {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/api/blog/recent`);
+        const posts = response.data.map(post => ({
+          ...post,
+          imageUrl: `${API_BASE_URL}${post.imageUrl}`, // Prepend API_BASE_URL
+        }));
+        setRecentPosts(posts);
+      } catch (error) {
+        console.error('Error fetching recent posts:', error);
+      }
+    };
+
+    fetchRecentPosts();
+  }, []);
 
   return (
     <div className="recent-posts">
@@ -14,10 +31,7 @@ const RecentPosts = () => {
           <li key={post.slug}>
             <Link to={`/blog/${post.slug}.html`}>
               <img src={post.imageUrl} alt={post.title} className="recent-post-image" />
-              <div className="recent-post-info">
-                <h4>{post.title}</h4>
-                <p>{new Date(post.createdDate).toLocaleDateString()}</p>
-              </div>
+              {post.title}
             </Link>
           </li>
         ))}
