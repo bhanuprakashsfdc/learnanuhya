@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { API_BASE_URL } from '../constants/constants';
 import axios from 'axios';
 import FAQ from './FAQ';
 import SocialShare from './SocialShare';
@@ -18,14 +19,14 @@ const BlogPostDetail = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`/api/blog/${slug}`);
+        const response = await axios.get(`${API_BASE_URL}/api/blog/${slug}`);
         setPost(response.data);
-        setViews((await axios.get(`/api/blog/${slug}/view`)).data.views);
+        setViews((await axios.get(`${API_BASE_URL}/api/blog/${slug}/view`)).data.views);
         setAdjacentPosts(getAdjacentPosts(slug)); // Assuming this function can fetch adjacent posts dynamically
         setTocItems(generateTocItems(response.data.content));
         
         // Update view count
-        await axios.post(`/api/blog/${slug}/view`);
+        await axios.post(`${API_BASE_URL}/api/blog/${slug}/view`);
       } catch (error) {
         console.error('Error fetching post:', error);
       }
@@ -58,7 +59,7 @@ const BlogPostDetail = () => {
             <h1 className="blog-post-title">{title}</h1>
             <p className="blog-post-date">{new Date(createdDate).toLocaleDateString()}</p>
             <p className="blog-post-views">{views} views</p>
-            <img src={imageUrl} alt={title} className="img-fluid blog-post-image" />
+            {imageUrl && <img src={imageUrl} alt={title} className="img-fluid blog-post-image" />}
             <TableOfContents items={tocItems} />
             <p className="blog-post-description">{description}</p>
             <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: content }} />

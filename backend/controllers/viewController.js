@@ -1,13 +1,23 @@
-// In a real application, you'd use a database to keep track of view counts
 const blogData = require('../data/blogData');
 
-// Increment view count for a blog post
-exports.incrementViewCount = (req, res) => {
-  const blog = blogData.find(b => b.slug === req.params.slug);
-  if (blog) {
-    blog.viewCount = (blog.viewCount || 0) + 1;
-    res.json(blog);
+// Dummy in-memory view count storage
+const viewCounts = {};
+
+exports.getViewCount = (req, res) => {
+  const slug = req.params.slug;
+  if (viewCounts[slug]) {
+    res.json({ views: viewCounts[slug] });
   } else {
-    res.status(404).json({ message: 'Blog not found' });
+    res.json({ views: 0 });
   }
+};
+
+exports.incrementViewCount = (req, res) => {
+  const slug = req.params.slug;
+  if (viewCounts[slug]) {
+    viewCounts[slug] += 1;
+  } else {
+    viewCounts[slug] = 1;
+  }
+  res.json({ views: viewCounts[slug] });
 };
