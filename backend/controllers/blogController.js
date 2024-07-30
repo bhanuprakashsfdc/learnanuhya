@@ -36,4 +36,15 @@ exports.getAdjacentPosts = (req, res) => {
   res.json({ previousPost, nextPost });
 };
 
+// Example searchBlogs function
+exports.searchBlogs = (req, res) => {
+  const query = req.query.q.toLowerCase();
+  const results = blogData.filter(blog =>
+    blog.title.toLowerCase().includes(query) ||
+    blog.description.toLowerCase().includes(query)||
+    blog.content.toLowerCase().includes(query)
+  );
+
+  res.json(results);
+};
 
