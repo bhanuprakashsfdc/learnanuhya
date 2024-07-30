@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const blogRoutes = require('./routes/blogRoutes');
 const viewRoutes = require('./routes/viewRoutes');
 
-app.use('/api/blogs', blogRoutes);
+app.use('/api/blog', blogRoutes);
 app.use('/api/views', viewRoutes);
 
 // Start server
