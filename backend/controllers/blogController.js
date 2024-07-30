@@ -14,3 +14,9 @@ exports.getBlogBySlug = (req, res) => {
     res.status(404).json({ message: 'Blog not found' });
   }
 };
+
+// Get recent posts
+exports.getRecentPosts = (req, res) => {
+  const recentPosts = blogData.slice(0, 5);
+  res.json(recentPosts);
+};

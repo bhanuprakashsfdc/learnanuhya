@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { API_BASE_URL } from '../constants/constants';
 import axios from 'axios';
+import { API_BASE_URL } from '../constants/constants';
 import FAQ from './FAQ';
 import SocialShare from './SocialShare';
 import TableOfContents from './TableOfContents';
@@ -19,14 +19,21 @@ const BlogPostDetail = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/blog/${slug}`);
+        const response = await axios.get(`${API_BASE_URL}/api/blogs/${slug}`);
         setPost(response.data);
-        setViews((await axios.get(`${API_BASE_URL}/api/blog/${slug}/view`)).data.views);
+
+        // Prepend API_BASE_URL to the imageUrl
+        setPost(prevPost => ({
+          ...prevPost,
+          imageUrl: `${API_BASE_URL}${response.data.imageUrl}`
+        }));
+
+        setViews((await axios.get(`${API_BASE_URL}/api/views/${slug}`)).data.views);
         setAdjacentPosts(getAdjacentPosts(slug)); // Assuming this function can fetch adjacent posts dynamically
         setTocItems(generateTocItems(response.data.content));
         
         // Update view count
-        await axios.post(`${API_BASE_URL}/api/blog/${slug}/view`);
+        await axios.post(`${API_BASE_URL}/api/blogs/${slug}/view`);
       } catch (error) {
         console.error('Error fetching post:', error);
       }
