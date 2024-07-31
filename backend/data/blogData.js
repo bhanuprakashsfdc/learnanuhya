@@ -1461,6 +1461,156 @@ const blogData = [
     }
   ],
   },
+  {
+    id: 19,
+    title: "What is Master-Detail Relationship in Salesforce",
+    slug: "what-is-master-detail-relationship-in-salesforce",
+    tag: "Salesforce",
+    keywords: "What is Master-Detail Relationship in Salesforce",
+    description: "What is Master-Detail Relationship in Salesforce, A Master-Detail Relationship in Salesforce links two objects, establishing a parent-child connection where child records depend on the existence of parent records.",
+    createdDate: "2024-04-18",
+    imageUrl: "/assets/img/blogs/what-is-master-detail-relationship-in-salesforce/what-is-master-detail-relationship-in-salesforce.jpeg",
+    signupUrl: "https://learn.anuhyadigital.com/what-is-master-detail-relationship-in-salesforce/",
+    content: `
+     <div id="types-of-cloud-services">
+        <h2>TYPES OF CLOUD SERVICES</h2>
+        <div id="saas">
+          <h3>SOFTWARE AS A SERVICES</h3>
+          <p>Software as a service refers to a software distribution model where applications are hosted by a third-party provider and made available to customers over the Internet.</p>
+        </div>
+        <div id="paas">
+          <h3>PLATFORM AS A SERVICES</h3>
+          <p>Platform as a service is a cloud computing model that provides a platform allowing customers to develop run and manage applications.</p>
+        </div>
+        <div id="iaas">
+          <h3>INFRASTRUCTURE AS A SERVICES</h3>
+          <p>Infrastructure as a Service is a cloud computing model that provides virtualized computing resources over the internet.</p>
+        </div>
+      </div>
+      <div id="cloud-characteristics">
+        <h2>CLOUD CHARACTERISTICS</h2>
+        <div id="agility">
+          <h3>Agility</h3>
+          <p>Improves user’s ability to re-design technological infrastructure resources as per requirement.</p>
+        </div>
+        <div id="api">
+          <h3>Application programming interface (API)</h3>
+          <p>Cloud services/hardware should be programmable to customize and utilize the cloud resources.</p>
+        </div>
+        <!-- Add more content as needed -->
+      </div>
+      <div id="types-of-clouds">
+        <h2>Types of Clouds in Cloud Computing</h2>
+        <div id="private-cloud">
+          <h3>Private Cloud</h3>
+          <p>Private cloud computing resources such as server storage and networking infrastructure are provisioned and maintained for the exclusive use of the organization.</p>
+        </div>
+        <div id="public-cloud">
+          <h3>Public Cloud</h3>
+          <p>Public cloud where computing environment resources, such as servers, storage, and networking infrastructure is owned and operated by a third-party cloud services.</p>
+        </div>
+        <!-- Add more content as needed -->
+      </div>
+      <div id="cloud-deployments">
+        <h2>Cloud Deployments in Cloud Computing</h2>
+        <div id="network-dependency">
+          <h3>Network dependency</h3>
+          <p>Organizations need a stable and high-speed internet connection to ensure seamless access to their cloud resources.</p>
+        </div>
+        <!-- Add more content as needed -->
+      </div>
+`,
+  faqs: [
+    {
+      question: " Can a child record exist without a parent record in a Master-Detail Relationship?",
+      answer: "No, a child record cannot exist without a parent record in a Master-Detail Relationship in Salesforce."
+    },
+    {
+      question: " What happens to child records when a parent record is deleted?",
+      answer: "When a parent record is deleted in a Master-Detail Relationship, all associated child records are automatically deleted as well."
+    },
+    {
+      question: "Are there any limits to the number of Master-Detail relationships that can be created in Salesforce?  ",
+      answer: "Yes, Salesforce limits the number of Master-Detail relationships that can be created based on the edition and configuration of your Salesforce instance."
+    }
+    
+  ],
+  },
+  {
+    id: 20,
+    title: "What is Self Relationship in Salesforce",
+    slug: "what-is-self-relationship-in-salesforce",
+    tag: "Salesforce",
+    keywords: "What is Self Relationship in Salesforce",
+    description: "What is Self Relationship in Salesforce, A self-relationship in Salesforce establishes a relationship between records within the same object, enabling hierarchical structures or linking records to themselves.",
+    createdDate: "2024-04-18",
+    imageUrl: "/assets/img/blogs/what-is-self-relationship-in-salesforce/what-is-self-relationship-in-salesforce.jpeg",
+    signupUrl: "https://learn.anuhyadigital.com/what-is-self-relationship-in-salesforce/",
+    content: `
+     <div id="types-of-cloud-services">
+        <h2>TYPES OF CLOUD SERVICES</h2>
+        <div id="saas">
+          <h3>SOFTWARE AS A SERVICES</h3>
+          <p>Software as a service refers to a software distribution model where applications are hosted by a third-party provider and made available to customers over the Internet.</p>
+        </div>
+        <div id="paas">
+          <h3>PLATFORM AS A SERVICES</h3>
+          <p>Platform as a service is a cloud computing model that provides a platform allowing customers to develop run and manage applications.</p>
+        </div>
+        <div id="iaas">
+          <h3>INFRASTRUCTURE AS A SERVICES</h3>
+          <p>Infrastructure as a Service is a cloud computing model that provides virtualized computing resources over the internet.</p>
+        </div>
+      </div>
+      <div id="cloud-characteristics">
+        <h2>CLOUD CHARACTERISTICS</h2>
+        <div id="agility">
+          <h3>Agility</h3>
+          <p>Improves user’s ability to re-design technological infrastructure resources as per requirement.</p>
+        </div>
+        <div id="api">
+          <h3>Application programming interface (API)</h3>
+          <p>Cloud services/hardware should be programmable to customize and utilize the cloud resources.</p>
+        </div>
+        <!-- Add more content as needed -->
+      </div>
+      <div id="types-of-clouds">
+        <h2>Types of Clouds in Cloud Computing</h2>
+        <div id="private-cloud">
+          <h3>Private Cloud</h3>
+          <p>Private cloud computing resources such as server storage and networking infrastructure are provisioned and maintained for the exclusive use of the organization.</p>
+        </div>
+        <div id="public-cloud">
+          <h3>Public Cloud</h3>
+          <p>Public cloud where computing environment resources, such as servers, storage, and networking infrastructure is owned and operated by a third-party cloud services.</p>
+        </div>
+        <!-- Add more content as needed -->
+      </div>
+      <div id="cloud-deployments">
+        <h2>Cloud Deployments in Cloud Computing</h2>
+        <div id="network-dependency">
+          <h3>Network dependency</h3>
+          <p>Organizations need a stable and high-speed internet connection to ensure seamless access to their cloud resources.</p>
+        </div>
+        <!-- Add more content as needed -->
+      </div>
+`,
+  faqs: [
+    {
+      question: "What is the difference between a self-relationship and a lookup relationship in Salesforce?",
+      answer: "A self-relationship in Salesforce connects records within the same object, while a lookup relationship links records between different objects.      "
+    },
+    {
+      question: " Can self-relationships be used in all Salesforce editions?",
+      answer: "Yes, self-relationships can be utilized in all Salesforce editions, enabling objects to relate to themselves, facilitating hierarchical structures or linking records within the same object."
+    },
+    {
+      question: "What are some common use cases for self-relationships in Salesforce?  ",
+      answer: "Self-relationships in Salesforce are commonly used for hierarchical structures like organizational charts or account hierarchies, facilitating parent-child relationships within a single object.      "
+    }
+    
+  ],
+  },
 ];
 
 module.exports = blogData;
